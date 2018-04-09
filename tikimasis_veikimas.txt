@@ -1,27 +1,29 @@
---> Prağome atkreipti dëmesá á planas.png, kuriame vaizdiğkai perteikëme savo projekto vizijà. <--
+--> PraÃ°ome atkreipti dÃ«mesÃ¡ Ã¡ planas.png, kuriame vaizdiÃ°kai perteikÃ«me savo projekto vizijÃ . <--
 
-Timestamp - paleidus sistemà (programà) uşfiksuojamas esamas kompiuterio laikas Long formatu, 
-kuris vëliau perverèiamas á datà.
-Pasirinkome Long formatu saugoti laiko duomenis, kad bûtø lengviau pashiftinti laikà, t.y. pridëti atitinkamà
-sekundşiø kieká nuo norimo pashiftinti kiekio, kuris vëliau yra paverèiamas á datà.
-Ğiuo atveju currentTime yra mûsø atskaitos tağkas, kuris bus naudojamas tikrinimams ir shiftinimui.
+Timestamp - paleidus sistemÃ  (programÃ ) uÃ¾fiksuojamas esamas kompiuterio laikas Long formatu, 
+kuris vÃ«liau perverÃ¨iamas Ã¡ datÃ .
+Pasirinkome Long formatu saugoti laiko duomenis, kad bÃ»tÃ¸ lengviau pashiftinti laikÃ , t.y. pridÃ«ti atitinkamÃ 
+sekundÃ¾iÃ¸ kiekÃ¡ nuo norimo pashiftinti kiekio, kuris vÃ«liau yra paverÃ¨iamas Ã¡ datÃ .
+Ãiuo atveju currentTime yra mÃ»sÃ¸ atskaitos taÃ°kas, kuris bus naudojamas tikrinimams ir shiftinimui.
 
-Kairëje virğuje turime pagrindiná langà, kuriame iğ tekstinio failo klausimai.txt skaitomi klausimø pavadinimai,
-paspaudus mygtukà "eiti á balsavimà" perkeliame á balsavimo langà.
-Pagrindiniame lange atvaizduojamos apklausos, kuriø galiojimo laikas nëra pasibaigæs.
-Tai patikriname su if'u ar currentTime nëra maşesnis uş apklausos galiojimo laikà (by default 1mënuo).
-Balsavimo lange paşymëtas galiojimo laikas iki kada galima balsuoti.
+KairÃ«je virÃ°uje turime pagrindinÃ¡ langÃ , kuriame iÃ° tekstinio failo klausimai.txt skaitomi klausimÃ¸ pavadinimai,
+paspaudus mygtukÃ  "eiti Ã¡ balsavimÃ " perkeliame Ã¡ balsavimo langÃ .
+Pagrindiniame lange atvaizduojamos apklausos, kuriÃ¸ galiojimo laikas nÃ«ra pasibaigÃ¦s.
+Tai patikriname su if'u ar currentTime nÃ«ra maÃ¾esnis uÃ¾ apklausos galiojimo laikÃ  (by default 1mÃ«nuo).
+Balsavimo lange paÃ¾ymÃ«tas galiojimo laikas iki kada galima balsuoti.
 
-Balsavimo lange atvaizduojame pasirinkimo variantus su "+" mygtuku, kurá paspaudus atidarome pop-up
-window, kuris reikalauja ávesti vartotojo vardà norint balsui pateikti.
-Duomenis saugome á tekstiná dokumentà balsai.txt
+Balsavimo lange atvaizduojame pasirinkimo variantus su "+" mygtuku, kurÃ¡ paspaudus atidarome pop-up
+window, kuris reikalauja Ã¡vesti vartotojo vardÃ  norint balsui pateikti.
+Duomenis saugome Ã¡ tekstinÃ¡ dokumentÃ  balsai.txt
 
-Pagrindiniame lange esantis mygtukas "pasibaigusios apklausos" perkelia mus á naujà langà, 
-kuriame matome ankstesnes apklausas ( tikriname pagal tai, kad currentTime maşesnis uş galiojimo laikà ).
-Atvaizduojame atitinkamus klausimus perskaitytus iğ failo bei suskaièiuojame tam klausimui priklausanèius balsus
-ir atvaizduojame balsavimo pasirinkimà su daugiausiai surinktø balsø.
+Pagrindiniame lange esantis mygtukas "pasibaigusios apklausos" perkelia mus Ã¡ naujÃ  langÃ , 
+kuriame matome ankstesnes apklausas ( tikriname pagal tai, kad currentTime maÃ¾esnis uÃ¾ galiojimo laikÃ  ).
+Atvaizduojame atitinkamus klausimus perskaitytus iÃ° failo bei suskaiÃ¨iuojame tam klausimui priklausanÃ¨ius balsus
+ir atvaizduojame balsavimo pasirinkimÃ  su daugiausiai surinktÃ¸ balsÃ¸.
 
-"Keisti sistemos laikà" mygtukas atidarys mums naujà pop-up window, kuris leis pashiftinti laikà +1 valanda,
-diena, savaite, mënesiu.
+"Keisti sistemos laikÃ " mygtukas atidarys mums naujÃ  pop-up window, kuris leis pashiftinti laikÃ  +1 valanda,
+diena, savaite, mÃ«nesiu.
 
+DabartinÄ—je programos stadijoje atsiranda pradinis programos langas, konsolÄ—je iÅ¡spausdinamas skaitymas iÅ¡ failÅ³ ir
+atvaizduojamas timeshiftinimas +1valanda,diena,savaite,mÄ—nesiu.
 
