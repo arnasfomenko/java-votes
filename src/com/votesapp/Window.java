@@ -36,6 +36,9 @@ public class Window extends JFrame {
         
         ReadFile readFile = new ReadFile();
         readFile.reader("klausimai.txt");
+        
+        StoreInfo storeInfo = new StoreInfo();
+        storeInfo.writer("pavadinimas.txt","Informacija irasoma i faila");
     }
 
     /**
