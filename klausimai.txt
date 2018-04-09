@@ -1,3 +1,3 @@
 Mëgstamiausia grupë?|Black Eyed Peace|G&G Sindikatas|SEL|2018-05-04
-Geriausias prekybos centras?|Ozas|Panorama|Ozas|2018-06-24
-Geriausia programavimo kalba?|PHP|Python|Ruby|2018-05-09
+Geriausias prekybos centras?|Akropolis|Panorama|Ozas|2018-06-24
+Geriausia programavimo kalba?|Javascript|Python|Ruby|2018-05-09
