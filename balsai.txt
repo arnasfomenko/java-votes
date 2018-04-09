@@ -1,12 +1,12 @@
-Mëgstamiausia grupë?|SEL|Arnas Fomenko|
+MÃ«gstamiausia grupÃ«?|SEL|Arnas Fomenko|
 Geriausias prekybos centras?|Akropolis|Arnas Fomenko|
 Geriausia programavimo kalba?|Javascript|Arnas Fomenko|
-Mëgstamiausia grupë?|Black Eyed Peace|Vardas Pavardenis|
+MÃ«gstamiausia grupÃ«?|Black Eyed Peace|Vardas Pavardenis|
 Geriausias prekybos centras?|Ozas|Vardas Pavardenis|
 Geriausia programavimo kalba?|Ruby|Vardas Pavardenis|
-Mëgstamiausia grupë?|SEL|Rytis Bukauskas|
+MÃ«gstamiausia grupÃ«?|SEL|Rytis Bukauskas|
 Geriausias prekybos centras?|Akropolis|Rytis Bukauskas|
 Geriausia programavimo kalba?|Ruby|Rytis Bukauskas|
-Mëgstamiausia grupë?|G&G Sindikatas|Mario Puzo|
+MÃ«gstamiausia grupÃ«?|G&G Sindikatas|Mario Puzo|
 Geriausias prekybos centras?|Akropolis|Mario Puzo|
 Geriausia programavimo kalba?|Javascript|Mario Puzo|
