@@ -17,8 +17,9 @@ public class Window extends JFrame {
 
     /**
      * Launch the application.
+     * @throws Exception 
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
@@ -32,6 +33,9 @@ public class Window extends JFrame {
 
         Timestamp timestamp = new Timestamp();
         timestamp.printTime();
+        
+        ReadFile readFile = new ReadFile();
+        readFile.reader("klausimai.txt");
     }
 
     /**
