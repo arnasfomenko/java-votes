@@ -56,6 +56,7 @@ public class ConfirmVote extends JFrame {
     		  		VoteCounter counter = new VoteCounter();
     				try {
 						counter.addVoter(voterName);
+					    dispose();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();

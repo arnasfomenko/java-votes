@@ -97,18 +97,7 @@ public class QuestionWindow extends JFrame {
 		JButton btnNewButton = new JButton("Gr\u012F\u017Eti");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				this.setVisible(false);
-				this.dispose();
-			}
-
-			private void dispose() {
-				
-				
-			}
-
-			private void setVisible(boolean b) {
-				
-				
+				dispose();
 			}
 		});
 		btnNewButton.setForeground(Color.BLACK);
@@ -129,6 +118,7 @@ public class QuestionWindow extends JFrame {
 				ConfirmVote cf = new ConfirmVote();
 				try {
 					cf.prepareAndShow(klausimai[0], klausimai[1]);
+			        btnBalsuoti.setEnabled(false);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -146,6 +136,7 @@ public class QuestionWindow extends JFrame {
 				ConfirmVote cf = new ConfirmVote();
 				try {
 					cf.prepareAndShow(klausimai[0], klausimai[2]);
+			        button.setEnabled(false);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -163,6 +154,7 @@ public class QuestionWindow extends JFrame {
 				ConfirmVote cf = new ConfirmVote();
 				try {
 					cf.prepareAndShow(klausimai[0], klausimai[3]);
+			        button_1.setEnabled(false);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

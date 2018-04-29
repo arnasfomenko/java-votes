@@ -129,6 +129,19 @@ public class Window extends JFrame {
         JButton btnNewButton_3 = new JButton("Keisti sistemos laik\u0105");
         btnNewButton_3.setBounds(312, 405, 322, 46);
         contentPane.add(btnNewButton_3);
+        btnNewButton_3.addActionListener(new ActionListener() { 
+        	  public void actionPerformed(ActionEvent e) { 
+        		  	TimeskipControl TsControl;
+						try {
+							TsControl = new TimeskipControl();
+							TsControl.prepareAndShow();
+						} catch (Exception e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+        	  		}
+        		} 
+          );
         
         Timestamp ts = new Timestamp();
         JTextPane txtpnTime = new JTextPane();
