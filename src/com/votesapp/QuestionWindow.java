@@ -1,6 +1,5 @@
 package com.votesapp;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -10,32 +9,20 @@ import javax.swing.JTextPane;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
-import javax.swing.JToggleButton;
 
 public class QuestionWindow extends JFrame {
 
+	private static final long serialVersionUID = 2666389299057740536L;
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					QuestionWindow frame = new QuestionWindow();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	public QuestionWindow() {
+		initialize();
 	}
 
 	/**
 	 * Create the frame.
 	 */
-	public QuestionWindow() {
+	public void initialize() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 640, 480);
 		contentPane = new JPanel();
@@ -129,4 +116,18 @@ public class QuestionWindow extends JFrame {
 		txtpnGaliojaIki.setBounds(21, 205, 193, 26);
 		contentPane.add(txtpnGaliojaIki);
 	}
+	
+	public void prepareAndShow() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					QuestionWindow frame = new QuestionWindow();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
 }
