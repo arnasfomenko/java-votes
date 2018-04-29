@@ -18,11 +18,10 @@ import javax.swing.JButton;
 public class VotingResults extends JFrame {
 
 	private JPanel contentPane;
-
-	public void VotinResults() {
+	
+	public VotingResults() {
 		initialize();
 	}
-
 
 	public void initialize() {
 		setBackground(Color.WHITE);

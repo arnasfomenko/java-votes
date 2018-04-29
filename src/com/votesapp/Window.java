@@ -185,6 +185,18 @@ public class Window extends JFrame {
         JButton btnNewButton_2 = new JButton("Apklaus\u0173 rezultatai");
         btnNewButton_2.setBounds(0, 405, 315, 46);
         contentPane.add(btnNewButton_2);
+        btnNewButton_2.addActionListener(new ActionListener() { 
+      	  public void actionPerformed(ActionEvent e) { 
+      		  	VotingResults VotingResults;
+						try {
+							VotingResults = new VotingResults();
+							VotingResults.prepareAndShow();
+						} catch (Exception e1) {
+							e1.printStackTrace();
+						}
+      	  		}
+      		} 
+        );
 
         JButton btnNewButton_3 = new JButton("Keisti sistemos laik\u0105");
         btnNewButton_3.setBounds(312, 405, 322, 46);
