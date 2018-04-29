@@ -95,11 +95,6 @@ public class QuestionWindow extends JFrame {
 		contentPane.add(txtpnTreiasPasirinkimas);
 		
 		JButton btnNewButton = new JButton("Gr\u012F\u017Eti");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-			}
-		});
 		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnNewButton.setBackground(SystemColor.inactiveCaption);
