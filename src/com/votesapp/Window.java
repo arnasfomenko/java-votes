@@ -69,15 +69,15 @@ public class Window extends JFrame {
         contentPane.add(btnNewButton);
 
         JButton btnNewButton_1 = new JButton("Sukurti nauj\u0105 apklaus\u0105");
-        btnNewButton_1.setBounds(0, 395, 148, 46);
+        btnNewButton_1.setBounds(0, 395, 193, 46);
         contentPane.add(btnNewButton_1);
 
         JButton btnNewButton_2 = new JButton("Pasibaigusios apklausos");
-        btnNewButton_2.setBounds(147, 395, 148, 46);
+        btnNewButton_2.setBounds(193, 395, 210, 46);
         contentPane.add(btnNewButton_2);
 
         JButton btnNewButton_3 = new JButton("Keisti sistemos laik\u0105");
-        btnNewButton_3.setBounds(294, 395, 125, 46);
+        btnNewButton_3.setBounds(402, 395, 222, 46);
         contentPane.add(btnNewButton_3);
     }
     
