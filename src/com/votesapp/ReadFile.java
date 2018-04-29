@@ -35,4 +35,14 @@ public class ReadFile {
 
 	}
 	
+	String readByLine(String filename) throws IOException {
+		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+		    String line;
+		    while ((line = br.readLine()) != null) {
+		       line = br.readLine();
+		    }
+		    return line;
+		}
+	}
+	
 }

@@ -1,13 +1,19 @@
-MÃ«gstamiausia grupÃ«?/SEL/Arnas Fomenko/
+Mëgstamiausia grupë?/SEL/Arnas Fomenko/
 Geriausias prekybos centras?/Akropolis/Arnas Fomenko/
 Geriausia programavimo kalba?/Javascript/Arnas Fomenko/
-MÃ«gstamiausia grupÃ«?/Black Eyed Peace/Vardas Pavardenis/
+Mëgstamiausia grupë?/Black Eyed Peace/Vardas Pavardenis/
 Geriausias prekybos centras?/Ozas/Vardas Pavardenis/
 Geriausia programavimo kalba?/Ruby/Vardas Pavardenis/
-MÃ«gstamiausia grupÃ«?/SEL/Rytis Bukauskas/
+Mëgstamiausia grupë?/SEL/Rytis Bukauskas/
 Geriausias prekybos centras?/Akropolis/Rytis Bukauskas/
 Geriausia programavimo kalba?/Ruby/Rytis Bukauskas/
-MÃ«gstamiausia grupÃ«?/G&G Sindikatas/Mario Puzo/
+Mëgstamiausia grupë?/G&G Sindikatas/Mario Puzo/
 Geriausias prekybos centras?/Akropolis/Mario Puzo/
 Geriausia programavimo kalba?/Javascript/Mario Puzo/
-Mëgstamiausia grupë?/Black Eyed Peace/null/
+Mëgstamiausia grupë?/Black Eyed Peace/Tomas Andrius/
+Mëgstamiausia grupë?/Black Eyed Peace/Arnas/
+Geriausia programavimo kalba?/Ruby/Arnas/
+Geriausia programavimo kalba?/Ruby/Rytis/
+Geriausia programavimo kalba?/Ruby/Romas/
+Geriausia programavimo kalba?/Ruby/Antanas/
+Geriausias prekybos centras?/Panorama/Maxima/

@@ -13,7 +13,6 @@ public class Timestamp {
     public void shiftTime(int param) throws IOException {
     	    	    
     	Long shiftedTime = this.readTime();
-    	System.out.println(this.generateDate());
     	
     	switch(param) {
     		case(1):
