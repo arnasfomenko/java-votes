@@ -9,6 +9,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JTextPane;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 public class Window extends JFrame {
 
@@ -18,11 +19,11 @@ public class Window extends JFrame {
 	private static final long serialVersionUID = 2396090078619442389L;
 	private JPanel contentPane;
     
-    public Window() {
+    public Window() throws Exception {
     	initialize();
     }
     
-    public void initialize() {
+    public void initialize() throws Exception {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 640, 480);
         contentPane = new JPanel();
@@ -37,35 +38,39 @@ public class Window extends JFrame {
         txtpnBalsavimai.setText("Balsavimai");
         txtpnBalsavimai.setBounds(0, 0, 138, 32);
         contentPane.add(txtpnBalsavimai);
+        
+        ReadFile readFile = new ReadFile();
+        String info = readFile.reader("klausimai.txt");
+        String[] klausimai = info.split("/");
 
         JTextPane txtpnApklausa = new JTextPane();
         txtpnApklausa.setEditable(false);
-        txtpnApklausa.setText("Apklausa 1");
-        txtpnApklausa.setBounds(0, 50, 160, 23);
+        txtpnApklausa.setText(klausimai[0]);
+        txtpnApklausa.setBounds(0, 50, 300, 23);
         contentPane.add(txtpnApklausa);
 
         JTextPane txtpnApklausa_1 = new JTextPane();
         txtpnApklausa_1.setEditable(false);
-        txtpnApklausa_1.setText("Apklausa 2");
-        txtpnApklausa_1.setBounds(0, 92, 160, 32);
+        txtpnApklausa_1.setText(klausimai[5]);
+        txtpnApklausa_1.setBounds(0, 92, 300, 32);
         contentPane.add(txtpnApklausa_1);
 
         JTextPane txtpnApklausa_2 = new JTextPane();
         txtpnApklausa_2.setEditable(false);
-        txtpnApklausa_2.setText("Apklausa 3");
-        txtpnApklausa_2.setBounds(0, 135, 160, 32);
+        txtpnApklausa_2.setText(klausimai[10]);
+        txtpnApklausa_2.setBounds(0, 135, 300, 32);
         contentPane.add(txtpnApklausa_2);
 
         JButton btnEitiApklaus = new JButton("Eiti \u012F apklaus\u0105");
-        btnEitiApklaus.setBounds(170, 50, 114, 23);
+        btnEitiApklaus.setBounds(500, 50, 114, 23);
         contentPane.add(btnEitiApklaus);
 
         JButton btnEitiApklaus_1 = new JButton("Eiti \u012F apklaus\u0105");
-        btnEitiApklaus_1.setBounds(170, 92, 114, 23);
+        btnEitiApklaus_1.setBounds(500, 92, 114, 23);
         contentPane.add(btnEitiApklaus_1);
 
         JButton btnNewButton = new JButton("Eiti \u012F apklaus\u0105");
-        btnNewButton.setBounds(170, 135, 114, 23);
+        btnNewButton.setBounds(500, 135, 114, 23);
         contentPane.add(btnNewButton);
 
         JButton btnNewButton_1 = new JButton("Sukurti nauj\u0105 apklaus\u0105");
@@ -79,6 +84,12 @@ public class Window extends JFrame {
         JButton btnNewButton_3 = new JButton("Keisti sistemos laik\u0105");
         btnNewButton_3.setBounds(402, 395, 222, 46);
         contentPane.add(btnNewButton_3);
+        
+        Timestamp ts = new Timestamp();
+        JTextPane txtpnTime = new JTextPane();
+        txtpnTime.setText(" " + ts.showDate(0));
+        txtpnTime.setBounds(451, 0, 173, 23);
+        contentPane.add(txtpnTime);
     }
     
     public void prepareAndShow() {

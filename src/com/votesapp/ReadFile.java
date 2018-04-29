@@ -1,15 +1,23 @@
 package com.votesapp;
 
-import java.io.File;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class ReadFile {
-    public void reader(String filename) throws Exception {
-        File file = new File(filename);
-        Scanner sc = new Scanner(file);
-        while(sc.hasNextLine()){
-            System.out.println(sc.nextLine());
-        }
-        sc.close();
-    }
+	String reader(String fileName) throws IOException {
+	    BufferedReader br = new BufferedReader(new FileReader(fileName));
+	    try {
+	        StringBuilder sb = new StringBuilder();
+	        String line = br.readLine();
+
+	        while (line != null) {
+	            sb.append(line);
+	            line = br.readLine();
+	        }
+	        return sb.toString();
+	    } finally {
+	        br.close();
+	    }
+	}
 }

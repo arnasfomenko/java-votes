@@ -28,14 +28,42 @@ public class Timestamp {
         Long passedByMonth = currentTime + 2592000;
         return passedByMonth;
     }
-
-    public String printTime() {
-        System.out.println("System start time: " + new Date(this.currentTime()*1000L));
-        System.out.println("System time passed by an hour: " + new Date(this.addHour()*1000L));
-        System.out.println("System time passed by a day: " + new Date(this.addDay()*1000L));
-        System.out.println("System time passed by a week: " + new Date(this.addWeek()*1000L));
-        System.out.println("System time passed by a month: " + new Date(this.addMonth()*1000L));
-        return null;
+    
+    public Long shiftTime(int param) {
+    	
+    	Long shiftedTime = this.currentTime();
+    	
+    	switch(param) {
+    		case(1):
+    			shiftedTime = this.addHour();
+    			break;
+    		case(2):
+    			shiftedTime = this.addDay();
+    			break;
+    		case(3):
+    			shiftedTime = this.addWeek();
+    			break;
+    		case(4):
+    			shiftedTime = this.addMonth();
+    			break;
+    		
+    		default:
+    			break;
+    			
+    	}
+    	
+		return shiftedTime;
+    	
+    }
+    
+    public Date showDate(int par) {
+    	
+    	if(par < 0 && par > 4) {
+    		par = 0;
+    	}
+    	
+    	Date newDate = new Date(this.shiftTime(par)*1000L);
+    	return newDate;
     }
 
 }
