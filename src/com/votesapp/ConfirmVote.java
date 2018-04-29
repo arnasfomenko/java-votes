@@ -9,6 +9,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextPane;
 import java.awt.Color;
 import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.Font;
 
 public class ConfirmVote extends JFrame {
 
@@ -36,7 +38,7 @@ public class ConfirmVote extends JFrame {
 	 */
 	public ConfirmVote() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 200);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -44,10 +46,11 @@ public class ConfirmVote extends JFrame {
 		contentPane.setLayout(null);
 		
 		JTextPane txtpnveskitSavoVard = new JTextPane();
+		txtpnveskitSavoVard.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		txtpnveskitSavoVard.setBackground(Color.LIGHT_GRAY);
 		txtpnveskitSavoVard.setEditable(false);
-		txtpnveskitSavoVard.setText("\u012Eveskit\u0119 savo vard\u0105 ir pavard\u0119");
-		txtpnveskitSavoVard.setBounds(10, 0, 163, 31);
+		txtpnveskitSavoVard.setText("\u012Eveskite savo vard\u0105 ir pavard\u0119");
+		txtpnveskitSavoVard.setBounds(10, 0, 261, 44);
 		contentPane.add(txtpnveskitSavoVard);
 		
 		textField = new JTextField();
@@ -55,5 +58,9 @@ public class ConfirmVote extends JFrame {
 		textField.setBounds(10, 85, 261, 31);
 		contentPane.add(textField);
 		textField.setColumns(10);
+		
+		JButton btnNewButton = new JButton("Balsuoti");
+		btnNewButton.setBounds(305, 89, 89, 23);
+		contentPane.add(btnNewButton);
 	}
 }

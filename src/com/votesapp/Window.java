@@ -20,6 +20,7 @@ public class Window extends JFrame {
 	private JPanel contentPane;
     
     public Window() throws Exception {
+    	setResizable(false);
     	initialize();
     }
     
@@ -27,7 +28,7 @@ public class Window extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 640, 480);
         contentPane = new JPanel();
-        contentPane.setBackground(Color.WHITE);
+        contentPane.setBackground(Color.LIGHT_GRAY);
         contentPane.setAutoscrolls(true);
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -37,6 +38,7 @@ public class Window extends JFrame {
         txtpnBalsavimai.setEditable(false);
         txtpnBalsavimai.setText("Balsavimai");
         txtpnBalsavimai.setBounds(0, 0, 138, 32);
+        txtpnBalsavimai.setBackground(Color.LIGHT_GRAY);
         contentPane.add(txtpnBalsavimai);
         
         ReadFile readFile = new ReadFile();
@@ -47,48 +49,55 @@ public class Window extends JFrame {
         txtpnApklausa.setEditable(false);
         txtpnApklausa.setText(klausimai[0]);
         txtpnApklausa.setBounds(0, 50, 300, 23);
+        txtpnApklausa.setBackground(Color.LIGHT_GRAY);
         contentPane.add(txtpnApklausa);
 
         JTextPane txtpnApklausa_1 = new JTextPane();
         txtpnApklausa_1.setEditable(false);
         txtpnApklausa_1.setText(klausimai[5]);
         txtpnApklausa_1.setBounds(0, 92, 300, 32);
+        txtpnApklausa_1.setBackground(Color.LIGHT_GRAY);
         contentPane.add(txtpnApklausa_1);
 
         JTextPane txtpnApklausa_2 = new JTextPane();
         txtpnApklausa_2.setEditable(false);
         txtpnApklausa_2.setText(klausimai[10]);
         txtpnApklausa_2.setBounds(0, 135, 300, 32);
+        txtpnApklausa_2.setBackground(Color.LIGHT_GRAY);
         contentPane.add(txtpnApklausa_2);
 
         JButton btnEitiApklaus = new JButton("Eiti \u012F apklaus\u0105");
         btnEitiApklaus.setBounds(500, 50, 114, 23);
+        btnEitiApklaus.setBackground(Color.GRAY);
         contentPane.add(btnEitiApklaus);
 
         JButton btnEitiApklaus_1 = new JButton("Eiti \u012F apklaus\u0105");
         btnEitiApklaus_1.setBounds(500, 92, 114, 23);
+        btnEitiApklaus_1.setBackground(Color.GRAY);
         contentPane.add(btnEitiApklaus_1);
 
         JButton btnNewButton = new JButton("Eiti \u012F apklaus\u0105");
         btnNewButton.setBounds(500, 135, 114, 23);
+        btnNewButton.setBackground(Color.GRAY);
         contentPane.add(btnNewButton);
 
         JButton btnNewButton_1 = new JButton("Sukurti nauj\u0105 apklaus\u0105");
-        btnNewButton_1.setBounds(0, 395, 193, 46);
+        btnNewButton_1.setBounds(0, 405, 203, 46);
         contentPane.add(btnNewButton_1);
 
         JButton btnNewButton_2 = new JButton("Pasibaigusios apklausos");
-        btnNewButton_2.setBounds(193, 395, 210, 46);
+        btnNewButton_2.setBounds(203, 405, 210, 46);
         contentPane.add(btnNewButton_2);
 
         JButton btnNewButton_3 = new JButton("Keisti sistemos laik\u0105");
-        btnNewButton_3.setBounds(402, 395, 222, 46);
+        btnNewButton_3.setBounds(412, 405, 222, 46);
         contentPane.add(btnNewButton_3);
         
         Timestamp ts = new Timestamp();
         JTextPane txtpnTime = new JTextPane();
         txtpnTime.setText(" " + ts.showDate(0));
         txtpnTime.setBounds(451, 0, 173, 23);
+        txtpnTime.setBackground(Color.LIGHT_GRAY);
         contentPane.add(txtpnTime);
     }
     

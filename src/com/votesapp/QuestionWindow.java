@@ -9,6 +9,7 @@ import javax.swing.JTextPane;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.SystemColor;
 
 public class QuestionWindow extends JFrame {
 
@@ -16,6 +17,7 @@ public class QuestionWindow extends JFrame {
 	private JPanel contentPane;
 
 	public QuestionWindow() {
+		setResizable(false);
 		initialize();
 	}
 
@@ -23,11 +25,11 @@ public class QuestionWindow extends JFrame {
 	 * Create the frame.
 	 */
 	public void initialize() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 640, 480);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		//contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
@@ -90,23 +92,23 @@ public class QuestionWindow extends JFrame {
 		JButton btnNewButton = new JButton("Gr\u012F\u017Eti");
 		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnNewButton.setBackground(Color.GRAY);
-		btnNewButton.setBounds(0, 395, 131, 46);
+		btnNewButton.setBackground(SystemColor.inactiveCaption);
+		btnNewButton.setBounds(0, 403, 131, 46);
 		contentPane.add(btnNewButton);
 		
 		JButton btnBalsuoti = new JButton("Balsuoti");
 		btnBalsuoti.setBackground(Color.GRAY);
-		btnBalsuoti.setBounds(185, 48, 89, 23);
+		btnBalsuoti.setBounds(535, 50, 89, 23);
 		contentPane.add(btnBalsuoti);
 		
 		JButton button = new JButton("Balsuoti");
 		button.setBackground(Color.GRAY);
-		button.setBounds(185, 81, 89, 23);
+		button.setBounds(535, 81, 89, 23);
 		contentPane.add(button);
 		
 		JButton button_1 = new JButton("Balsuoti");
 		button_1.setBackground(Color.GRAY);
-		button_1.setBounds(185, 118, 89, 23);
+		button_1.setBounds(535, 112, 89, 23);
 		contentPane.add(button_1);
 		
 		JTextPane txtpnGaliojaIki = new JTextPane();
