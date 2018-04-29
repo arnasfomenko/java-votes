@@ -18,8 +18,6 @@ public class ConfirmVote extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	public String voterName;
-
 
 	public ConfirmVote() {
 		initialize();

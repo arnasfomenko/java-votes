@@ -25,8 +25,6 @@ public class TimeskipControl extends JFrame {
     }
 	
 	
-
-	
 	public void initialize() throws Exception {
 		setResizable(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Namai\\Documents\\GitHub\\java-votes\\clock.png"));
@@ -114,4 +112,5 @@ public class TimeskipControl extends JFrame {
 			}
 		});
 
+	}
 }

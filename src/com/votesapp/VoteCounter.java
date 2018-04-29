@@ -9,10 +9,6 @@ public class VoteCounter {
         StoreInfo storeInfo = new StoreInfo();
         storeInfo.writer("balsai2.txt", votename, chosen);
 	}
-	
-	public String setName(String name) {
-		return name;
-	}
 
 	public void addVoter(String voterName) throws IOException {
 		StoreInfo storeInfo = new StoreInfo();
