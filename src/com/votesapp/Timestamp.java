@@ -1,5 +1,6 @@
 package com.votesapp;
 
+import java.io.IOException;
 import java.util.Date;
 
 public class Timestamp {
@@ -8,62 +9,61 @@ public class Timestamp {
         long numericTime = (long) 1525132800;
         return numericTime;
     }
-    public Long addHour() {
-        Long currentTime = this.currentTime();
-        Long passedByHour = currentTime + 3600;
-        return passedByHour;
-    }
-    public Long addDay() {
-        Long currentTime = this.currentTime();
-        Long passedByDay = currentTime + 86400;
-        return passedByDay;
-    }
-    public Long addWeek() {
-        Long currentTime = this.currentTime();
-        Long passedByWeek = currentTime + 604800;
-        return passedByWeek;
-    }
-    public Long addMonth() {
-        Long currentTime = this.currentTime();
-        Long passedByMonth = currentTime + 2592000;
-        return passedByMonth;
-    }
     
-    public Long shiftTime(int param) {
-    	
-    	Long shiftedTime = this.currentTime();
+    public void shiftTime(int param) throws IOException {
+    	    	    
+    	Long shiftedTime = this.readTime();
+    	System.out.println(this.generateDate());
     	
     	switch(param) {
     		case(1):
-    			shiftedTime = this.addHour();
+    			shiftedTime += 3600;
+    			this.writeTime(shiftedTime);
     			break;
     		case(2):
-    			shiftedTime = this.addDay();
+    			shiftedTime += 86400;
+    			this.writeTime(shiftedTime);
     			break;
     		case(3):
-    			shiftedTime = this.addWeek();
+    			shiftedTime += 604800;
+    			this.writeTime(shiftedTime);
     			break;
     		case(4):
-    			shiftedTime = this.addMonth();
+    			shiftedTime += 2592000;
+    			this.writeTime(shiftedTime);
     			break;
-    		
-    		default:
-    			break;
-    			
+			default:
+				shiftedTime = this.currentTime();
+				this.writeTime(shiftedTime);
+				break;
     	}
-    	
-		return shiftedTime;
     	
     }
     
-    public Date showDate(int par) {
+    public void writeTime(Long shiftedTime) {
+    	String convertedTime = shiftedTime.toString();
+    	convertedTime.substring(0,10);
+    	StoreInfo storeInfo = new StoreInfo();
+        try {
+			storeInfo.timeWriter("timestamp.txt", convertedTime);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
+    public Date generateDate() throws IOException {
     	
-    	if(par < 0 && par > 4) {
-    		par = 0;
-    	}
-    	
-    	Date newDate = new Date(this.shiftTime(par)*1000L);
+    	Long newTimestamp = this.readTime();
+		Date newDate = new Date(newTimestamp*1000L);
     	return newDate;
+    }
+    
+    public Long readTime() throws IOException {
+        ReadFile readFile = new ReadFile();
+		String timestamp = readFile.readLine("Timestamp.txt");
+		Long newTimestamp = Long.parseLong(timestamp);
+		
+		return newTimestamp;
     }
 
 }

@@ -11,6 +11,7 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 
 public class TimeskipControl extends JFrame {
@@ -73,35 +74,67 @@ public class TimeskipControl extends JFrame {
 		txtpnAddyear.setBounds(10, 120, 95, 20);
 		contentPane.add(txtpnAddyear);
 		
+        Timestamp ts = new Timestamp();
+		
 		JButton btnHourbutton = new JButton("+1 hour");
 		btnHourbutton.setBackground(Color.GRAY);
 		btnHourbutton.setBounds(195, 80, 89, 23);
 		contentPane.add(btnHourbutton);
         btnHourbutton.addActionListener(new ActionListener() { 
       	  public void actionPerformed(ActionEvent e) { 
-      		  		
+      		  		try {
+						ts.shiftTime(1);
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
       	  		}
       		} 
         );
 		
 		JButton btnWeekbutton = new JButton("+1 week");
 		btnWeekbutton.setBackground(Color.GRAY);
-		btnWeekbutton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
 		btnWeekbutton.setBounds(195, 160, 89, 23);
 		contentPane.add(btnWeekbutton);
+        btnWeekbutton.addActionListener(new ActionListener() { 
+        	  public void actionPerformed(ActionEvent e) { 
+        		  		try {
+  						ts.shiftTime(3);
+  					} catch (IOException e1) {
+  						e1.printStackTrace();
+  					}
+        	  		}
+        		} 
+          );
 		
 		JButton btnAddmonth = new JButton("+1 month");
 		btnAddmonth.setBackground(Color.GRAY);
 		btnAddmonth.setBounds(195, 197, 89, 23);
 		contentPane.add(btnAddmonth);
+        btnAddmonth.addActionListener(new ActionListener() { 
+        	  public void actionPerformed(ActionEvent e) { 
+        		  		try {
+  						ts.shiftTime(4);
+  					} catch (IOException e1) {
+  						e1.printStackTrace();
+  					}
+        	  		}
+        		} 
+          );
 		
 		JButton btnAddDay = new JButton("+1 day");
 		btnAddDay.setBackground(Color.GRAY);
 		btnAddDay.setBounds(195, 120, 89, 23);
 		contentPane.add(btnAddDay);
+        btnAddDay.addActionListener(new ActionListener() { 
+        	  public void actionPerformed(ActionEvent e) { 
+        		  		try {
+  						ts.shiftTime(2);
+  					} catch (IOException e1) {
+  						e1.printStackTrace();
+  					}
+        	  		}
+        		} 
+          );
 	}
 	
 	public void prepareAndShow() {

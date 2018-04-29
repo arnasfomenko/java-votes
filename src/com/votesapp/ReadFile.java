@@ -20,4 +20,19 @@ public class ReadFile {
 	        br.close();
 	    }
 	}
+	
+	String readLine(String filename) throws IOException {
+
+		BufferedReader br = new BufferedReader(new FileReader(filename));
+
+		String sCurrentLine;
+		
+		sCurrentLine = br.readLine();
+		
+		br.close();
+		
+		return sCurrentLine;
+
+	}
+	
 }

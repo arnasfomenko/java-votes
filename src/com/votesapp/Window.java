@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import com.sun.glass.events.WindowEvent;
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
@@ -12,7 +14,6 @@ import java.io.IOException;
 
 import javax.swing.JTextPane;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 
 public class Window extends JFrame {
 
@@ -144,7 +145,8 @@ public class Window extends JFrame {
         Timestamp ts = new Timestamp();
         JTextPane txtpnTime = new JTextPane();
         txtpnTime.setEditable(false);
-        txtpnTime.setText(" " + ts.showDate(0));
+        ts.shiftTime(0);
+        txtpnTime.setText(" " + ts.generateDate());
         txtpnTime.setBounds(369, 0, 255, 23);
         txtpnTime.setBackground(Color.LIGHT_GRAY);
         contentPane.add(txtpnTime);
@@ -156,6 +158,14 @@ public class Window extends JFrame {
                 try {
                 	Window frame = new Window();
                     frame.setVisible(true);
+                    frame.addWindowListener(new java.awt.event.WindowAdapter() {
+                        @Override
+                        public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                            long numericTime = (long) 1525132800;
+                    		Timestamp ts = new Timestamp();
+                    		ts.writeTime(numericTime);
+                        }
+                    });
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -163,8 +173,4 @@ public class Window extends JFrame {
         });
     }
     
-    public void dontShow() throws Exception {
-    	Window frame = new Window();
-        frame.setVisible(false);
-    }
 }

@@ -7,5 +7,9 @@ public class main {
 		Window window = new Window();
 		window.prepareAndShow();
 
+        long numericTime = (long) 1525132800;
+		Timestamp ts = new Timestamp();
+		ts.writeTime(numericTime);
+
 	}
 }

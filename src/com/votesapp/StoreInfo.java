@@ -11,6 +11,12 @@ public class StoreInfo {
 		wr.write(votename + "/" + chosen + "/");
 		wr.close();
 	}
+	
+	public void timeWriter(String filename, String shiftedTime) throws IOException {
+		Writer wr = new FileWriter(filename, false);
+		wr.write(shiftedTime);
+		wr.close();
+	}
 
 	public void writerForName(String filename, String voterName) throws IOException {
 		Writer wr = new FileWriter(filename, true);
