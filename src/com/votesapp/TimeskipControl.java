@@ -1,13 +1,11 @@
 package com.votesapp;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
-import java.awt.Window.Type;
 import javax.swing.JTextPane;
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -29,7 +27,6 @@ public class TimeskipControl extends JFrame {
 	
 	public void initialize() throws Exception {
 		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Namai\\Documents\\GitHub\\java-votes\\clock.png"));
 		setType(Type.POPUP);
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -113,5 +110,6 @@ public class TimeskipControl extends JFrame {
 				}
 			}
 		});
-
+	}
 }
+
