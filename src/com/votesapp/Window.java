@@ -49,27 +49,27 @@ public class Window extends JFrame {
 
         JTextPane txtpnApklausa = new JTextPane();
         txtpnApklausa.setEditable(false);
-        txtpnApklausa.setText(klausimai[0]);
-        txtpnApklausa.setBounds(0, 50, 300, 23);
+        txtpnApklausa.setText(klausimai[0] + "\nGalioja iki: " + klausimai[4]);
+        txtpnApklausa.setBounds(0, 69, 300, 46);
         txtpnApklausa.setBackground(Color.LIGHT_GRAY);
         contentPane.add(txtpnApklausa);
 
         JTextPane txtpnApklausa_1 = new JTextPane();
         txtpnApklausa_1.setEditable(false);
-        txtpnApklausa_1.setText(klausimai[5]);
-        txtpnApklausa_1.setBounds(0, 92, 300, 32);
+        txtpnApklausa_1.setText(klausimai[5] + "\nGalioja iki: " + klausimai[9]);
+        txtpnApklausa_1.setBounds(0, 126, 300, 46);
         txtpnApklausa_1.setBackground(Color.LIGHT_GRAY);
         contentPane.add(txtpnApklausa_1);
 
         JTextPane txtpnApklausa_2 = new JTextPane();
         txtpnApklausa_2.setEditable(false);
-        txtpnApklausa_2.setText(klausimai[10]);
-        txtpnApklausa_2.setBounds(0, 135, 300, 32);
+        txtpnApklausa_2.setText(klausimai[10]+ "\nGalioja iki: " + klausimai[14]);
+        txtpnApklausa_2.setBounds(0, 183, 300, 46);
         txtpnApklausa_2.setBackground(Color.LIGHT_GRAY);
         contentPane.add(txtpnApklausa_2);
 
         JButton btnEitiApklaus = new JButton("Eiti \u012F apklaus\u0105");
-        btnEitiApklaus.setBounds(500, 50, 114, 23);
+        btnEitiApklaus.setBounds(500, 69, 114, 23);
         btnEitiApklaus.setBackground(Color.GRAY);
         contentPane.add(btnEitiApklaus);
         btnEitiApklaus.addActionListener(new ActionListener() { 
@@ -79,7 +79,6 @@ public class Window extends JFrame {
 						question = new QuestionWindow();
 						question.prepareAndShow();
 					} catch (IOException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
       	  		}
@@ -87,7 +86,7 @@ public class Window extends JFrame {
         );
 
         JButton btnEitiApklaus_1 = new JButton("Eiti \u012F apklaus\u0105");
-        btnEitiApklaus_1.setBounds(500, 92, 114, 23);
+        btnEitiApklaus_1.setBounds(500, 126, 114, 23);
         btnEitiApklaus_1.setBackground(Color.GRAY);
         contentPane.add(btnEitiApklaus_1);
         btnEitiApklaus_1.addActionListener(new ActionListener() { 
@@ -97,7 +96,6 @@ public class Window extends JFrame {
   						question2 = new QuestionWindow2();
   						question2.prepareAndShow();
   					} catch (Exception e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
         	  		}
@@ -105,7 +103,7 @@ public class Window extends JFrame {
           );
 
         JButton btnNewButton = new JButton("Eiti \u012F apklaus\u0105");
-        btnNewButton.setBounds(500, 135, 114, 23);
+        btnNewButton.setBounds(500, 183, 114, 23);
         btnNewButton.setBackground(Color.GRAY);
         contentPane.add(btnNewButton);
         btnNewButton.addActionListener(new ActionListener() { 
@@ -122,7 +120,7 @@ public class Window extends JFrame {
       		} 
         );
 
-        JButton btnNewButton_2 = new JButton("Pasibaigusios apklausos");
+        JButton btnNewButton_2 = new JButton("Apklaus\u0173 rezultatai");
         btnNewButton_2.setBounds(0, 405, 315, 46);
         contentPane.add(btnNewButton_2);
 

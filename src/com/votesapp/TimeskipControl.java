@@ -22,14 +22,10 @@ public class TimeskipControl extends JFrame {
     	initialize();
     }
 	
-	
-
-	
 	public void initialize() throws Exception {
 		setResizable(false);
 		setType(Type.POPUP);
 		setBackground(Color.WHITE);
-		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 300, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
@@ -81,6 +77,12 @@ public class TimeskipControl extends JFrame {
 		btnHourbutton.setBackground(Color.GRAY);
 		btnHourbutton.setBounds(195, 80, 89, 23);
 		contentPane.add(btnHourbutton);
+        btnHourbutton.addActionListener(new ActionListener() { 
+      	  public void actionPerformed(ActionEvent e) { 
+      		  		
+      	  		}
+      		} 
+        );
 		
 		JButton btnWeekbutton = new JButton("+1 week");
 		btnWeekbutton.setBackground(Color.GRAY);
