@@ -5,7 +5,7 @@ import java.util.Date;
 public class Timestamp {
 
     public Long currentTime() {
-        Long numericTime = new Date().getTime()/1000;
+        Long numericTime = (long) (2018-01-01/1000);
         return numericTime;
     }
     public Long addHour() {

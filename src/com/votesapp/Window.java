@@ -1,50 +1,28 @@
 package com.votesapp;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 import java.awt.Color;
+import java.awt.EventQueue;
+
 import javax.swing.JTextPane;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class Window extends JFrame {
 
-    private JPanel contentPane;
-
     /**
-     * Launch the application.
-     * @throws Exception 
-     */
-    public static void main(String[] args) throws Exception {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    Window frame = new Window();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-        Timestamp timestamp = new Timestamp();
-        timestamp.printTime();
-        
-        ReadFile readFile = new ReadFile();
-        readFile.reader("klausimai.txt");
-        
-        StoreInfo storeInfo = new StoreInfo();
-        storeInfo.writer("pavadinimas.txt","Informacija irasoma i faila");
-    }
-
-    /**
-     * Create the frame.
-     */
+	 * 
+	 */
+	private static final long serialVersionUID = 2396090078619442389L;
+	private JPanel contentPane;
+    
     public Window() {
+    	initialize();
+    }
+    
+    public void initialize() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 640, 480);
         contentPane = new JPanel();
@@ -87,10 +65,6 @@ public class Window extends JFrame {
         contentPane.add(btnEitiApklaus_1);
 
         JButton btnNewButton = new JButton("Eiti \u012F apklaus\u0105");
-        btnNewButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-            }
-        });
         btnNewButton.setBounds(170, 135, 114, 23);
         contentPane.add(btnNewButton);
 
@@ -105,5 +79,18 @@ public class Window extends JFrame {
         JButton btnNewButton_3 = new JButton("Keisti sistemos laik\u0105");
         btnNewButton_3.setBounds(294, 395, 125, 46);
         contentPane.add(btnNewButton_3);
+    }
+    
+    public void prepareAndShow() {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                	Window frame = new Window();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
     }
 }

@@ -10,5 +10,6 @@ public class ReadFile {
         while(sc.hasNextLine()){
             System.out.println(sc.nextLine());
         }
+        sc.close();
     }
 }
