@@ -4,13 +4,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import com.sun.glass.events.WindowEvent;
-
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.JTextPane;
 import javax.swing.JButton;
@@ -114,7 +115,6 @@ public class Window extends JFrame {
 						question3 = new QuestionWindow3();
 						question3.prepareAndShow();
 					} catch (Exception e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
       	  		}
@@ -135,18 +135,29 @@ public class Window extends JFrame {
 							TsControl = new TimeskipControl();
 							TsControl.prepareAndShow();
 						} catch (Exception e1) {
-							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
         	  		}
         		} 
           );
         
-        Timestamp ts = new Timestamp();
         JTextPane txtpnTime = new JTextPane();
         txtpnTime.setEditable(false);
-        ts.shiftTime(0);
-        txtpnTime.setText(" " + ts.generateDate());
+        Timer t = new Timer();
+        t.schedule(new TimerTask() {
+            @Override 
+            public void run() {
+            	Timestamp ts = new Timestamp();
+            	Date generatedDate;
+				try {
+					generatedDate = (Date) ts.generateDate();
+					txtpnTime.setText(" " + generatedDate);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
+            }
+        }, 0L, 1000L);
         txtpnTime.setBounds(369, 0, 255, 23);
         txtpnTime.setBackground(Color.LIGHT_GRAY);
         contentPane.add(txtpnTime);
@@ -171,6 +182,12 @@ public class Window extends JFrame {
                 }
             }
         });
+    }
+    
+    public Date getGeneratedDate() throws IOException {
+    	Timestamp ts = new Timestamp();
+    	Date generatedDate = (Date) ts.generateDate();
+		return generatedDate;
     }
     
 }
