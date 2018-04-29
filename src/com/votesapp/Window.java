@@ -6,6 +6,9 @@ import javax.swing.border.EmptyBorder;
 
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.JTextPane;
 import javax.swing.JButton;
@@ -16,7 +19,6 @@ public class Window extends JFrame {
     /**
 	 * 
 	 */
-	private static final long serialVersionUID = 2396090078619442389L;
 	private JPanel contentPane;
     
     public Window() throws Exception {
@@ -70,33 +72,69 @@ public class Window extends JFrame {
         btnEitiApklaus.setBounds(500, 50, 114, 23);
         btnEitiApklaus.setBackground(Color.GRAY);
         contentPane.add(btnEitiApklaus);
+        btnEitiApklaus.addActionListener(new ActionListener() { 
+      	  public void actionPerformed(ActionEvent e) { 
+	      			QuestionWindow question;
+					try {
+						question = new QuestionWindow();
+						question.prepareAndShow();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+      	  		}
+      		} 
+        );
 
         JButton btnEitiApklaus_1 = new JButton("Eiti \u012F apklaus\u0105");
         btnEitiApklaus_1.setBounds(500, 92, 114, 23);
         btnEitiApklaus_1.setBackground(Color.GRAY);
         contentPane.add(btnEitiApklaus_1);
+        btnEitiApklaus_1.addActionListener(new ActionListener() { 
+        	  public void actionPerformed(ActionEvent e) { 
+  	      			QuestionWindow2 question2;
+  					try {
+  						question2 = new QuestionWindow2();
+  						question2.prepareAndShow();
+  					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+        	  		}
+        		} 
+          );
 
         JButton btnNewButton = new JButton("Eiti \u012F apklaus\u0105");
         btnNewButton.setBounds(500, 135, 114, 23);
         btnNewButton.setBackground(Color.GRAY);
         contentPane.add(btnNewButton);
-
-        JButton btnNewButton_1 = new JButton("Sukurti nauj\u0105 apklaus\u0105");
-        btnNewButton_1.setBounds(0, 405, 203, 46);
-        contentPane.add(btnNewButton_1);
+        btnNewButton.addActionListener(new ActionListener() { 
+      	  public void actionPerformed(ActionEvent e) { 
+	      			QuestionWindow3 question3;
+					try {
+						question3 = new QuestionWindow3();
+						question3.prepareAndShow();
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+      	  		}
+      		} 
+        );
 
         JButton btnNewButton_2 = new JButton("Pasibaigusios apklausos");
-        btnNewButton_2.setBounds(203, 405, 210, 46);
+        btnNewButton_2.setBounds(0, 405, 315, 46);
         contentPane.add(btnNewButton_2);
 
         JButton btnNewButton_3 = new JButton("Keisti sistemos laik\u0105");
-        btnNewButton_3.setBounds(412, 405, 222, 46);
+        btnNewButton_3.setBounds(312, 405, 322, 46);
         contentPane.add(btnNewButton_3);
         
         Timestamp ts = new Timestamp();
         JTextPane txtpnTime = new JTextPane();
+        txtpnTime.setEditable(false);
         txtpnTime.setText(" " + ts.showDate(0));
-        txtpnTime.setBounds(451, 0, 173, 23);
+        txtpnTime.setBounds(369, 0, 255, 23);
         txtpnTime.setBackground(Color.LIGHT_GRAY);
         contentPane.add(txtpnTime);
     }
@@ -112,5 +150,10 @@ public class Window extends JFrame {
                 }
             }
         });
+    }
+    
+    public void dontShow() throws Exception {
+    	Window frame = new Window();
+        frame.setVisible(false);
     }
 }

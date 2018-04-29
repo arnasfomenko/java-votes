@@ -1,6 +1,5 @@
 package com.votesapp;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -11,37 +10,28 @@ import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class ConfirmVote extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
+	public String voterName;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ConfirmVote frame = new ConfirmVote();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+
+	public ConfirmVote() {
+		initialize();
 	}
 
 	/**
 	 * Create the frame.
 	 */
-	public ConfirmVote() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public void initialize() {
 		setBounds(100, 100, 450, 200);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
@@ -62,5 +52,34 @@ public class ConfirmVote extends JFrame {
 		JButton btnNewButton = new JButton("Balsuoti");
 		btnNewButton.setBounds(305, 89, 89, 23);
 		contentPane.add(btnNewButton);
+        btnNewButton.addActionListener(new ActionListener() { 
+        		public void actionPerformed(ActionEvent e) { 
+    		  		String voterName = textField.getText();
+    		  		VoteCounter counter = new VoteCounter();
+    				try {
+						counter.addVoter(voterName);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+    	  		}
+        	}
+        );
+        
+	}
+
+	public void prepareAndShow(String votename, String chosen) throws IOException {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ConfirmVote frame = new ConfirmVote();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		VoteCounter counter = new VoteCounter();
+		counter.addVote(votename, chosen);
 	}
 }

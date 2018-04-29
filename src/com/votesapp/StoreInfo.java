@@ -6,10 +6,18 @@ import java.io.Writer;
 
 public class StoreInfo {
 
-	public void writer(String filename, String text) throws IOException {
-		Writer wr = new FileWriter(filename);
-		wr.write(text);
+	public void writer(String filename, String votename, String chosen) throws IOException {
+		Writer wr = new FileWriter(filename, true);
+		wr.write(votename + "/" + chosen + "/");
 		wr.close();
+	}
+
+	public void writerForName(String filename, String voterName) throws IOException {
+		Writer wr = new FileWriter(filename, true);
+		wr.write(voterName + "/");
+		wr.write(System.getProperty("line.separator"));
+		wr.close();
+		
 	}
 	
 	

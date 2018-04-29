@@ -4,7 +4,6 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JTextPane;
 import java.awt.Color;
 import java.awt.Font;
@@ -14,11 +13,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public class QuestionWindow extends JFrame {
+public class QuestionWindow2 extends JFrame {
 
 	private JPanel contentPane;
 
-	public QuestionWindow() throws IOException {
+	public QuestionWindow2() throws IOException {
 		setResizable(false);
 		initialize();
 	}
@@ -42,7 +41,7 @@ public class QuestionWindow extends JFrame {
 		txtpnPavadinimas.setEditable(false);
 		txtpnPavadinimas.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txtpnPavadinimas.setBackground(Color.LIGHT_GRAY);
-		txtpnPavadinimas.setText(klausimai[0]);
+		txtpnPavadinimas.setText(klausimai[5]);
 		txtpnPavadinimas.setBounds(0, 0, 229, 26);
 		contentPane.add(txtpnPavadinimas);
 		
@@ -73,13 +72,13 @@ public class QuestionWindow extends JFrame {
 		JTextPane txtpnPirmasPasirinkimas = new JTextPane();
 		txtpnPirmasPasirinkimas.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		txtpnPirmasPasirinkimas.setBackground(Color.LIGHT_GRAY);
-		txtpnPirmasPasirinkimas.setText(klausimai[1]);
+		txtpnPirmasPasirinkimas.setText(klausimai[6]);
 		txtpnPirmasPasirinkimas.setEditable(false);
 		txtpnPirmasPasirinkimas.setBounds(21, 53, 131, 26);
 		contentPane.add(txtpnPirmasPasirinkimas);
 		
 		JTextPane txtpnAntrasPasirinkimas = new JTextPane();
-		txtpnAntrasPasirinkimas.setText(klausimai[2]);
+		txtpnAntrasPasirinkimas.setText(klausimai[7]);
 		txtpnAntrasPasirinkimas.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		txtpnAntrasPasirinkimas.setEditable(false);
 		txtpnAntrasPasirinkimas.setBackground(Color.LIGHT_GRAY);
@@ -87,7 +86,7 @@ public class QuestionWindow extends JFrame {
 		contentPane.add(txtpnAntrasPasirinkimas);
 		
 		JTextPane txtpnTreiasPasirinkimas = new JTextPane();
-		txtpnTreiasPasirinkimas.setText(klausimai[3]);
+		txtpnTreiasPasirinkimas.setText(klausimai[8]);
 		txtpnTreiasPasirinkimas.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		txtpnTreiasPasirinkimas.setEditable(false);
 		txtpnTreiasPasirinkimas.setBackground(Color.LIGHT_GRAY);
@@ -109,7 +108,7 @@ public class QuestionWindow extends JFrame {
     	  public void actionPerformed(ActionEvent e) { 
 				ConfirmVote cf = new ConfirmVote();
 				try {
-					cf.prepareAndShow(klausimai[0], klausimai[1]);
+					cf.prepareAndShow(klausimai[5], klausimai[6]);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -126,7 +125,7 @@ public class QuestionWindow extends JFrame {
     	  public void actionPerformed(ActionEvent e) { 
 				ConfirmVote cf = new ConfirmVote();
 				try {
-					cf.prepareAndShow(klausimai[0], klausimai[2]);
+					cf.prepareAndShow(klausimai[5], klausimai[7]);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -143,7 +142,7 @@ public class QuestionWindow extends JFrame {
     	  public void actionPerformed(ActionEvent e) { 
 				ConfirmVote cf = new ConfirmVote();
 				try {
-					cf.prepareAndShow(klausimai[0], klausimai[3]);
+					cf.prepareAndShow(klausimai[5], klausimai[8]);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -155,7 +154,7 @@ public class QuestionWindow extends JFrame {
 		JTextPane txtpnGaliojaIki = new JTextPane();
 		txtpnGaliojaIki.setBackground(Color.LIGHT_GRAY);
 		txtpnGaliojaIki.setEditable(false);
-		txtpnGaliojaIki.setText("Balsuoti galima iki:" + klausimai[4]);
+		txtpnGaliojaIki.setText("Balsuoti galima iki:" + klausimai[9]);
 		txtpnGaliojaIki.setBounds(21, 205, 193, 26);
 		contentPane.add(txtpnGaliojaIki);
 	}
@@ -164,7 +163,7 @@ public class QuestionWindow extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					QuestionWindow frame = new QuestionWindow();
+					QuestionWindow2 frame = new QuestionWindow2();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
