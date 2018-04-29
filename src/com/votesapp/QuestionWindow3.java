@@ -12,6 +12,7 @@ import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.Date;
 
 public class QuestionWindow3 extends JFrame {
 
@@ -162,8 +163,9 @@ public class QuestionWindow3 extends JFrame {
 		JTextPane txtpnGaliojaIki = new JTextPane();
 		txtpnGaliojaIki.setBackground(Color.LIGHT_GRAY);
 		txtpnGaliojaIki.setEditable(false);
-		txtpnGaliojaIki.setText("Balsuoti galima iki:" + klausimai[14]);
-		txtpnGaliojaIki.setBounds(21, 205, 193, 26);
+		Long firstTimestamp = Long.parseLong(klausimai[14]);
+		txtpnGaliojaIki.setText("Balsuoti galima iki:" + new Date(firstTimestamp*1000L));
+		txtpnGaliojaIki.setBounds(21, 205, 515, 26);
 		contentPane.add(txtpnGaliojaIki);
 	}
 	

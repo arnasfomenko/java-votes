@@ -48,24 +48,27 @@ public class Window extends JFrame {
         ReadFile readFile = new ReadFile();
         String info = readFile.reader("klausimai.txt");
         String[] klausimai = info.split("/");
-
+        Long firstTimestamp = Long.parseLong(klausimai[4]);
+        Long secondTimestamp = Long.parseLong(klausimai[9]);
+        Long thirdTimestamp = Long.parseLong(klausimai[14]);
+        
         JTextPane txtpnApklausa = new JTextPane();
         txtpnApklausa.setEditable(false);
-        txtpnApklausa.setText(klausimai[0] + "\nGalioja iki: " + klausimai[4]);
+        txtpnApklausa.setText(klausimai[0] + "\nGalioja iki: " + new Date(firstTimestamp*1000L));
         txtpnApklausa.setBounds(0, 69, 300, 46);
         txtpnApklausa.setBackground(Color.LIGHT_GRAY);
         contentPane.add(txtpnApklausa);
 
         JTextPane txtpnApklausa_1 = new JTextPane();
         txtpnApklausa_1.setEditable(false);
-        txtpnApklausa_1.setText(klausimai[5] + "\nGalioja iki: " + klausimai[9]);
+        txtpnApklausa_1.setText(klausimai[5] + "\nGalioja iki: " + new Date(secondTimestamp*1000L));
         txtpnApklausa_1.setBounds(0, 126, 300, 46);
         txtpnApklausa_1.setBackground(Color.LIGHT_GRAY);
         contentPane.add(txtpnApklausa_1);
 
         JTextPane txtpnApklausa_2 = new JTextPane();
         txtpnApklausa_2.setEditable(false);
-        txtpnApklausa_2.setText(klausimai[10]+ "\nGalioja iki: " + klausimai[14]);
+        txtpnApklausa_2.setText(klausimai[10]+ "\nGalioja iki: " + new Date(thirdTimestamp*1000L));
         txtpnApklausa_2.setBounds(0, 183, 300, 46);
         txtpnApklausa_2.setBackground(Color.LIGHT_GRAY);
         contentPane.add(txtpnApklausa_2);
@@ -74,12 +77,32 @@ public class Window extends JFrame {
         btnEitiApklaus.setBounds(500, 69, 114, 23);
         btnEitiApklaus.setBackground(Color.GRAY);
         contentPane.add(btnEitiApklaus);
+        Timer t3 = new Timer();
+        t3.schedule(new TimerTask() {
+            @Override 
+            public void run() {
+            	Timestamp ts = new Timestamp();
+            	Long dateTimestamp;
+				try {
+					dateTimestamp = ts.readTime();
+					
+					if (dateTimestamp > firstTimestamp) {
+						btnEitiApklaus.setEnabled(false);
+					}
+					
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
+            }
+        }, 0L, 1000L);
         btnEitiApklaus.addActionListener(new ActionListener() { 
       	  public void actionPerformed(ActionEvent e) { 
 	      			QuestionWindow question;
 					try {
 						question = new QuestionWindow();
 						question.prepareAndShow();
+						
 					} catch (IOException e1) {
 						e1.printStackTrace();
 					}
@@ -91,6 +114,25 @@ public class Window extends JFrame {
         btnEitiApklaus_1.setBounds(500, 126, 114, 23);
         btnEitiApklaus_1.setBackground(Color.GRAY);
         contentPane.add(btnEitiApklaus_1);
+        Timer ts = new Timer();
+        ts.schedule(new TimerTask() {
+            @Override 
+            public void run() {
+            	Timestamp ts = new Timestamp();
+            	Long dateTimestamp;
+				try {
+					dateTimestamp = ts.readTime();
+					
+					if (dateTimestamp > secondTimestamp) {
+						btnEitiApklaus_1.setEnabled(false);
+					}
+					
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
+            }
+        }, 0L, 1000L);
         btnEitiApklaus_1.addActionListener(new ActionListener() { 
         	  public void actionPerformed(ActionEvent e) { 
   	      			QuestionWindow2 question2;
@@ -108,6 +150,25 @@ public class Window extends JFrame {
         btnNewButton.setBounds(500, 183, 114, 23);
         btnNewButton.setBackground(Color.GRAY);
         contentPane.add(btnNewButton);
+        Timer t = new Timer();
+        t.schedule(new TimerTask() {
+            @Override 
+            public void run() {
+            	Timestamp ts = new Timestamp();
+            	Long dateTimestamp;
+				try {
+					dateTimestamp = ts.readTime();
+					
+					if (dateTimestamp > thirdTimestamp) {
+						btnNewButton.setEnabled(false);
+					}
+					
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
+            }
+        }, 0L, 1000L);
         btnNewButton.addActionListener(new ActionListener() { 
       	  public void actionPerformed(ActionEvent e) { 
 	      			QuestionWindow3 question3;
@@ -143,8 +204,8 @@ public class Window extends JFrame {
         
         JTextPane txtpnTime = new JTextPane();
         txtpnTime.setEditable(false);
-        Timer t = new Timer();
-        t.schedule(new TimerTask() {
+        Timer td = new Timer();
+        td.schedule(new TimerTask() {
             @Override 
             public void run() {
             	Timestamp ts = new Timestamp();
