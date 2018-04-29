@@ -118,6 +118,7 @@ public class QuestionWindow extends JFrame {
 				ConfirmVote cf = new ConfirmVote();
 				try {
 					cf.prepareAndShow(klausimai[0], klausimai[1]);
+					btnBalsuoti.setEnabled(false);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -135,6 +136,7 @@ public class QuestionWindow extends JFrame {
 				ConfirmVote cf = new ConfirmVote();
 				try {
 					cf.prepareAndShow(klausimai[0], klausimai[2]);
+					button.setEnabled(false);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -152,6 +154,7 @@ public class QuestionWindow extends JFrame {
 				ConfirmVote cf = new ConfirmVote();
 				try {
 					cf.prepareAndShow(klausimai[0], klausimai[3]);
+					button_1.setEnabled(false);
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
